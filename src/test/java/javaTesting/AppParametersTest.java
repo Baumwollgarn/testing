@@ -35,12 +35,11 @@ public class AppParametersTest {
 
     @Test
     public void singletonCorrectness() {
-
         AppParameters inst1 = AppParameters.getInstance();
 
         AppParameters inst2 = AppParameters.getInstance();
 
-        Assert.assertTrue("Instances are the same", inst1 == inst2);
+        Assert.assertSame("Instances are the same", inst1, inst2);
 
     }
 }
