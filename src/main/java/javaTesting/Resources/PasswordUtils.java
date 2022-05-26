@@ -18,7 +18,7 @@ public class PasswordUtils {
         return new String(returnValue);
     }
 
-    public static String genSecurePassword (String password, String salt) throws NoSuchAlgorithmException {
+    public static String genSecurePassword (String password, String salt) {
         String returnValue = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -35,11 +35,9 @@ public class PasswordUtils {
         return returnValue;
     }
 
-    public static boolean verifyUserPassword(String passwordEntered, String userSalt, String userPassword) throws NoSuchAlgorithmException {
+    public static boolean verifyUserPassword(String passwordEntered, String userSalt, String userPassword){
         return userPassword.equals(genSecurePassword(passwordEntered, userSalt));
     }
-
-
 
     // This method can be used by anybody to check if a password
     // is valid or not.
