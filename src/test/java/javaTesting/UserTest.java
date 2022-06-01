@@ -14,7 +14,7 @@ public class UserTest {
     public void constructUserTest() {
         User user = new User("Alex","123");
 
-        assertTrue(user != null);
+        assertTrue(true);
 
         assertEquals(user.getName(), "Alex");
 
